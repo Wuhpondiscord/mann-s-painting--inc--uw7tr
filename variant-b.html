@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mann's Painting, Inc. | Professional Painting & Specialty Coatings Alma, MI</title>
+    <meta name="description" content="With over 30 years of experience, Mann's Painting provides expert commercial and residential painting in Alma, MI. Specializing in hospitals, schools, and high-end interiors.">
+    <meta name="keywords" content="Painting contractors Alma MI, Commercial painting services Gratiot County, Industrial specialty coatings Michigan, Best house painters Alma Michigan, Hospital and school painting contractors MI">
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981', // Emerald
+                            600: '#059669',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-dark {
+            background: rgba(2, 44, 34, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-900 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Floating Navigation -->
+    <nav class="fixed w-full top-0 z-50 px-4 pt-4">
+        <div class="max-w-7xl mx-auto glass-nav border border-slate-200/50 rounded-full px-6 py-3 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-2">
+                <!-- Brand Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">Mann's<span class="text-brand-600">.</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+                <a href="#process" class="hover:text-brand-600 transition-colors">Our Process</a>
+                <a href="#portfolio" class="hover:text-brand-600 transition-colors">Projects</a>
+                <a href="#reviews" class="hover:text-brand-600 transition-colors">Reviews</a>
+            </div>
+            <div>
+                <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Dark/SaaS Variant) -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-950">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] opacity-30 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-teal-300 blur-[100px] rounded-full mix-blend-screen transform -translate-y-1/2"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-dark border border-white/10 mb-6">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-500"></span>
+                        </span>
+                        <span class="text-xs font-semibold text-brand-100 uppercase tracking-wider">Serving Alma & Gratiot County for 35+ Years</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+                        Institutional Trust. <br>
+                        <span class="text-gradient">Precision Coatings.</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-slate-300 mb-8 max-w-lg leading-relaxed">
+                        From sterile hospital wings to historic heritage homes, we engineer flawless, high-durability finishes that protect your most valuable assets.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-brand-500 hover:bg-brand-400 text-white px-8 py-4 rounded-xl text-center font-semibold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                            Request an Estimate
+                        </a>
+                        <a href="#services" class="glass-dark text-white border border-white/10 hover:bg-white/10 px-8 py-4 rounded-xl text-center font-semibold transition-all flex items-center justify-center gap-2">
+                            Explore Services
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual / Floating Bento Cards -->
+                <div class="relative h-[500px] hidden lg:block">
+                    <!-- Main Image Card -->
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4/5 h-[400px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10">
+                        <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&q=80" alt="Modern painted commercial interior" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold">Project Completed</p>
+                                    <p class="text-brand-200 text-sm">MyMichigan Medical Center</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Stat 1 -->
+                    <div class="absolute left-0 top-1/4 glass-dark border border-white/10 p-5 rounded-2xl shadow-xl z-20 animate-float">
+                        <p class="text-4xl font-extrabold text-white mb-1">35+</p>
+                        <p class="text-brand-200 text-sm font-medium">Years of Experience</p>
+                    </div>
+                    <!-- Floating Stat 2 -->
+                    <div class="absolute left-10 bottom-1/4 glass-dark border border-white/10 p-5 rounded-2xl shadow-xl z-20 animate-float" style="animation-delay: 2s;">
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <p class="text-white font-semibold">5.0 Average Rating</p>
+                        <p class="text-slate-400 text-xs">from Alma residents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Logos -->
+    <section class="py-10 border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Trusted by Mid-Michigan Institutions & Homeowners</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale">
+                <!-- Dummy logos using typography for effect -->
+                <h3 class="text-2xl font-bold font-serif text-slate-800">Alma Public Schools</h3>
+                <h3 class="text-2xl font-bold font-sans text-slate-800">Mid-Michigan Medical</h3>
+                <h3 class="text-2xl font-bold font-serif italic text-slate-800">Alma College Area</h3>
+                <h3 class="text-2xl font-bold font-sans tracking-tight text-slate-800">Gratiot Chamber</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Services Section -->
+    <section id="services" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">More Than Just Painters.</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">We provide specialized coatings and precision painting for projects where quality, safety, and durability are non-negotiable.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Commercial (Large Box) -->
+                <div class="md:col-span-2 group relative bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" alt="Commercial Painting" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div class="relative z-20 p-10 h-full flex flex-col justify-end min-h-[400px]">
+                        <div class="bg-brand-500 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16"/><path d="M4 22V2h16v20"/><path d="M8 14h2"/><path d="M8 18h2"/><path d="M8 6h2"/><path d="M8 10h2"/><path d="M14 14h2"/><path d="M14 18h2"/><path d="M14 6h2"/><path d="M14 10h2"/></svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Commercial & Institutional</h3>
+                        <p class="text-slate-200 text-lg max-w-md">Strict safety compliance, high-durability specialty coatings, and minimal disruption for hospitals, schools, and offices.</p>
+                    </div>
+                </div>
+
+                <!-- Residential -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 p-8 flex flex-col">
+                    <div class="bg-slate-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">The Quality-First Homeowner</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Premium interior and exterior finishes for high-value and historic properties in Alma, St. Louis, and Ithaca.</p>
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" alt="Residential Painting" class="w-full h-40 object-cover rounded-2xl" />
+                </div>
+
+                <!-- Specialty Coatings -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 p-8">
+                    <div class="bg-slate-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m3 13 4.7-4.7a2 2 0 0 1 2.8 0L12 9.8l1.5-1.5a2 2 0 0 1 2.8 0L21 13"/><path d="M2 22h20"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Specialty Coatings</h3>
+                    <p class="text-slate-600">Industrial-grade epoxies, low-VOC medical safe paints, and protective wood restorations.</p>
+                </div>
+
+                <!-- Zero Disruption -->
+                <div class="group bg-brand-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-3">Zero Contractor Anxiety</h3>
+                    <p class="text-brand-100 mb-6">Tired of messes and poor communication? We treat your property with the same care as a sterile surgical wing.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-medium"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Daily progress updates</li>
+                        <li class="flex items-center gap-3 text-sm font-medium"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Spotless cleanup guaranteed</li>
+                        <li class="flex items-center gap-3 text-sm font-medium"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> On-time project delivery</li>
+                    </ul>
+                </div>
+
+                <!-- Legacy Badge -->
+                <div class="group bg-slate-100 rounded-3xl overflow-hidden shadow-inner p-8 flex items-center justify-center text-center">
+                    <div>
+                        <p class="text-6xl font-black text-slate-300 mb-2">1989</p>
+                        <p class="text-slate-600 font-semibold">Established in Alma, MI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">The Mann's Painting Process</h2>
+                    <p class="text-lg text-slate-600 mb-10">A seamless, 3-step system designed to eliminate contractor anxiety. You'll know exactly what to expect from day one.</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Step 1 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xl">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Consult & Inspect</h4>
+                                <p class="text-slate-600">We assess your property, discuss specialty coating needs (like high-traffic durability or medical compliance), and provide a transparent, detailed quote.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xl">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Meticulous Prep</h4>
+                                <p class="text-slate-600">A perfect finish relies on perfect prep. We handle drywall repair, sanding, priming, and strict environmental protection before opening a single can of paint.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-500 text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Precision Paint & Reveal</h4>
+                                <p class="text-slate-600">Our seasoned team applies premium coatings. Once finished, we perform a spotless cleanup and a final walkthrough to guarantee your absolute satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80" alt="Professional painter working" class="w-full h-full object-cover" />
+                    </div>
+                    <!-- Overlay badge -->
+                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-lg">Fully Insured</p>
+                                <p class="text-slate-500 text-sm">Licensed & Bonded in MI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Social Proof -->
+    <section id="reviews" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">The Word Around Town</h2>
+                <p class="text-lg text-slate-600">Hear from facility managers and homeowners in the Gratiot County area.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
+                    <div class="absolute top-8 right-8 text-slate-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    </div>
+                    <div class="flex text-brand-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-slate-700 text-lg mb-6 leading-relaxed">
+                        "Mann's handled the interior painting for our new administrative wing. Minimal disruption, absolute professionalism, and the high-durability epoxy on the lower walls looks incredible. Highly recommend for any commercial needs."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">
+                            JD
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">James D.</p>
+                            <p class="text-sm text-slate-500">Facility Manager, Alma MI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative">
+                    <div class="absolute top-8 right-8 text-slate-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    </div>
+                    <div class="flex text-brand-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="text-slate-700 text-lg mb-6 leading-relaxed">
+                        "We live in a historic home near Alma College, and we were terrified of hiring the wrong painter. Kevin and his team treated our house with immense respect. Perfect lines, zero mess, absolute perfection."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">
+                            SM
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">Sarah M.</p>
+                            <p class="text-sm text-slate-500">Homeowner, Alma MI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Lead Gen Section -->
+    <section id="contact" class="py-24 bg-brand-950 relative overflow-hidden">
+        <!-- Abstract decoration -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">Ready for a Premium Finish?</h2>
+                    <p class="text-xl text-brand-100 mb-10 max-w-lg">
+                        Skip the endless back-and-forth. Provide a few details about your project, and Kevin Mann will reach out directly to schedule a free, no-obligation consultation.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="w-12 h-12 rounded-full glass-dark border border-white/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-brand-200">Call Us</p>
+                                <p class="text-xl font-bold">(989) 555-0198</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="w-12 h-12 rounded-full glass-dark border border-white/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-brand-200">Service Area</p>
+                                <p class="text-lg font-bold">Alma, St. Louis, Ithaca & beyond.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead Gen Form (SaaS Style) -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Request Your Estimate</h3>
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-slate-700">First Name</label>
+                                <input type="text" class="w-full bg-slate-50 border-0 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 rounded-xl px-4 py-3 outline-none transition-all" placeholder="John">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-semibold text-slate-700">Last Name</label>
+                                <input type="text" class="w-full bg-slate-50 border-0 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 rounded-xl px-4 py-3 outline-none transition-all" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Email Address</label>
+                            <input type="email" class="w-full bg-slate-50 border-0 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 rounded-xl px-4 py-3 outline-none transition-all" placeholder="john@example.com">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Project Type</label>
+                            <select class="w-full bg-slate-50 border-0 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 rounded-xl px-4 py-3 outline-none transition-all text-slate-700">
+                                <option>Commercial / Institutional</option>
+                                <option>High-End Residential</option>
+                                <option>Specialty Coatings / Industrial</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700">Project Details</label>
+                            <textarea rows="3" class="w-full bg-slate-50 border-0 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 rounded-xl px-4 py-3 outline-none transition-all" placeholder="Tell us about your space..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-colors shadow-lg hover:shadow-xl mt-4">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Mann's<span class="text-brand-500">.</span></span>
+                </div>
+                <div class="flex gap-6 text-brand-200 text-sm font-medium">
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#process" class="hover:text-white transition-colors">Process</a>
+                    <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
+                </div>
+            </div>
+            <div class="text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-brand-200/60 text-sm">
+                <p>&copy; 2026 Mann's Painting, Inc. All rights reserved. Alma, Michigan.</p>
+                <p>Licensed & Fully Insured Specialty Contractors.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+      (function() {
+        const config = {
+          username: 'wuhp',
+          businessId: 'uw7tr',
+          variant: 'B',
+          origin: 'https://ais-dev-iu7tq7kd2cpslaq72zxpwz-212988073263.us-west2.run.app'
+        };
+
+        const getDevice = () => {
+          const ua = navigator.userAgent;
+          if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'tablet';
+          if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(ua)) return 'mobile';
+          return 'desktop';
+        };
+
+        const getBrowser = () => {
+          const ua = navigator.userAgent;
+          if (ua.includes('Chrome')) return 'Chrome';
+          if (ua.includes('Safari')) return 'Safari';
+          if (ua.includes('Firefox')) return 'Firefox';
+          if (ua.includes('Edge')) return 'Edge';
+          return 'Other';
+        };
+
+        const getOS = () => {
+          const ua = navigator.userAgent;
+          if (ua.includes('Windows')) return 'Windows';
+          if (ua.includes('Mac OS')) return 'macOS';
+          if (ua.includes('Android')) return 'Android';
+          if (ua.includes('iPhone') || ua.includes('iPad')) return 'iOS';
+          if (ua.includes('Linux')) return 'Linux';
+          return 'Other';
+        };
+
+        let startTime = Date.now();
+        let maxScroll = 0;
+        let locationData = null;
+
+        // Get location data
+        fetch('https://ipapi.co/json/')
+          .then(res => res.json())
+          .then(data => {
+            locationData = {
+              city: data.city,
+              region: data.region,
+              country: data.country_name
+            };
+            track('geo', { loc: JSON.stringify(locationData) });
+          })
+          .catch(() => {});
+
+        const track = (type, extra = {}) => {
+          const params = new URLSearchParams({
+            username: config.username,
+            businessId: config.businessId,
+            type: type,
+            ref: document.referrer || 'direct',
+            br: getBrowser(),
+            os: getOS(),
+            dev: getDevice(),
+            sid: sessionStorage.getItem('sf_sid') || '',
+            variant: config.variant,
+            path: window.location.pathname,
+            ...extra
+          });
+          fetch(config.origin + '/api/analytics/track?' + params.toString(), { mode: 'no-cors' });
+        };
+
+        // Session tracking
+        if (!sessionStorage.getItem('sf_sid')) {
+          const sid = Math.random().toString(36).substring(7);
+          sessionStorage.setItem('sf_sid', sid);
+          track('session');
+        }
+
+        track('view');
+
+        // Scroll tracking
+        window.addEventListener('scroll', () => {
+          const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+          if (scrollPercent > maxScroll) {
+            maxScroll = scrollPercent;
+            if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 100) {
+              track('scroll', { depth: maxScroll });
+            }
+          }
+        });
+
+        // Click tracking
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('a, button');
+          if (target) {
+            const isGoal = target.innerText.toLowerCase().includes('contact') || 
+                           target.innerText.toLowerCase().includes('book') || 
+                           target.innerText.toLowerCase().includes('get started') ||
+                           target.id.toLowerCase().includes('cta');
+            
+            track(isGoal ? 'goal' : 'click', { 
+              elementId: target.id || target.innerText.substring(0, 20).trim(),
+              text: target.innerText.substring(0, 30).trim()
+            });
+          }
+        });
+
+        // Form tracking
+        document.addEventListener('submit', (e) => {
+          track('form_submit', { elementId: e.target.id || 'form' });
+        });
+
+        // Time on page tracking
+        window.addEventListener('beforeunload', () => {
+          const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+          track('exit', { time: timeOnPage, maxScroll: maxScroll });
+        });
+
+        // Performance tracking
+        window.addEventListener('load', () => {
+          if (window.performance && window.performance.timing) {
+            const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+            track('perf', { loadTime });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
