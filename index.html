@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mann’s Painting, Inc. | Professional Painting & Specialty Coatings Alma, MI</title>
+    <meta name="description" content="With over 35 years of experience, Mann’s Painting provides expert commercial and residential painting in Alma, MI. Specializing in hospitals, schools, and high-end interiors. Get your free quote today!">
+    <meta name="keywords" content="Painting contractors Alma MI, Commercial painting services Gratiot County, Industrial specialty coatings Michigan, Best house painters Alma Michigan, Hospital and school painting contractors MI">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#0f172a', // Primary Deep Navy
+                        },
+                        accent: {
+                            DEFAULT: '#f59e0b', // Amber/Gold
+                            hover: '#d97706',
+                        },
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b', // Industrial Slate
+                            900: '#0f172a',
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Glassmorphism & Animations -->
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bento-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bento-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-navy-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        M
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-navy-900 leading-none">Mann's Painting</span>
+                        <span class="text-xs text-slate-500 font-medium tracking-wider uppercase">Inc. Since 1989</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Services</a>
+                    <a href="#commercial" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Commercial</a>
+                    <a href="#process" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">Our Process</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-navy-900 transition-colors">About</a>
+                    <a href="#contact" class="bg-navy-900 hover:bg-navy-800 text-white px-5 py-2.5 rounded-md text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+                        Get a Free Quote
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-navy-900 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Services</a>
+                <a href="#commercial" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Commercial</a>
+                <a href="#process" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Our Process</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">About</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center text-base font-semibold text-white bg-navy-900 rounded-md">Get a Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop" alt="Professional Commercial Painting" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/80 to-navy-900/40"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs font-medium text-white tracking-wide uppercase">Serving Mid-Michigan Since 1989</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                    35 Years of Institutional Trust & <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-300">Precision Coatings</span>.
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+                    From sterile hospital wings to historic homes in Alma, MI. We are the premier painting contractors providing large-scale reliability and meticulous attention to detail.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-accent hover:bg-accent-hover text-navy-900 font-bold px-8 py-4 rounded-md text-center transition-all flex items-center justify-center gap-2 shadow-lg">
+                        Request an Estimate
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#services" class="glass-dark hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-md text-center transition-all flex items-center justify-center">
+                        Explore Our Services
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center gap-6 sm:gap-10 text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-5 h-5"></i>
+                        <span class="text-sm font-medium">Commercial</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span class="text-sm font-medium">Residential</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        <span class="text-sm font-medium">Fully Insured</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        <span class="text-sm font-medium">Alma, MI & Gratiot County</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem / Solution Section -->
+    <section class="py-20 bg-white" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">Stop Rolling the Dice on Your Property.</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Whether you are a facility manager at a busy medical center or a homeowner protecting your biggest investment, hiring the wrong contractor means costly disruptions, poor finishes, and safety liabilities.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        At <strong class="text-navy-900">Mann's Painting, Inc.</strong>, we don't just paint walls; we engineer durable surfaces. With over 30 years of experience trusted by MyMichigan Medical Center and local school districts, we bring institutional-grade precision to every project.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+                            <span class="text-slate-700"><strong>Minimal Disruption:</strong> We work around your schedule to keep your business running or your home peaceful.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+                            <span class="text-slate-700"><strong>Specialty Expertise:</strong> From high-durability epoxies to historic home preservation.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"></i>
+                            <span class="text-slate-700"><strong>Generational Quality:</strong> A family-run, local Alma business that stands behind every brushstroke.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <!-- Decorative elements -->
+                    <div class="absolute -inset-4 bg-slate-100 rounded-2xl transform rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2031&auto=format&fit=crop" alt="Manns Painting Team Member" class="relative rounded-2xl shadow-xl w-full h-[500px] object-cover" />
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-navy-900 uppercase tracking-wider">Top Rated</p>
+                                <p class="text-slate-500 text-sm">In Gratiot County</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Bento Grid -->
+    <section class="py-24 bg-slate-50" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-sm font-bold text-accent tracking-wider uppercase mb-3">Our Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Comprehensive Specialty Contracting</h3>
+                <p class="text-lg text-slate-600">If a company is trusted to paint a sterile surgical wing, you can trust them with your living room. We scale our expertise to fit your needs.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Commercial (Large) -->
+                <div class="bento-hover col-span-1 md:col-span-2 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm relative overflow-hidden group" id="commercial">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full transform translate-x-1/3 -translate-y-1/3 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center text-navy-900 mb-6">
+                            <i data-lucide="building" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-navy-900 mb-3">Institutional & Commercial</h4>
+                        <p class="text-slate-600 mb-6 max-w-md">Large-scale projects for Mid-Michigan schools, hospitals, and government facilities. We ensure strict safety compliance and utilize high-durability specialty coatings designed for heavy traffic and sterile environments.</p>
+                        <a href="#contact" class="inline-flex items-center text-sm font-semibold text-navy-900 hover:text-accent transition-colors">
+                            Discuss a Commercial Bid <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Residential -->
+                <div class="bento-hover col-span-1 bg-navy-900 rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=1000&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-accent mb-6 backdrop-blur-sm">
+                            <i data-lucide="home" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3">Premium Residential</h4>
+                        <p class="text-slate-300 mb-6">High-end interior and exterior painting for homeowners in Alma, St. Louis, and Ithaca. Protect your investment with a flawless, long-lasting finish.</p>
+                        <a href="#contact" class="inline-flex items-center text-sm font-semibold text-accent hover:text-white transition-colors">
+                            Get a Home Estimate <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Specialty Coatings -->
+                <div class="bento-hover col-span-1 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                    <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-accent mb-6">
+                        <i data-lucide="droplets" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Industrial Coatings</h4>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">Epoxies, urethanes, and specialized industrial applications designed to withstand harsh chemicals, weather, and mechanical wear.</p>
+                </div>
+
+                <!-- Card 4: Restoration -->
+                <div class="bento-hover col-span-1 md:col-span-2 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-600 border border-slate-100">
+                            <i data-lucide="hammer" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-navy-900 mb-2">Wood Restoration & Drywall Repair</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">We don't just paint over problems. Our team provides comprehensive prep work, including drywall patching, deck staining, and historic wood restoration, ensuring a perfect canvas before the first drop of paint is applied.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 bg-white border-t border-slate-100" id="process">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">The Zero-Stress Process</h2>
+                <p class="text-lg text-slate-600">We've refined our workflow over 3 decades to eliminate contractor anxiety. Here is what happens when you hire Mann's.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting line for desktop -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center relative">
+                        <div class="w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-lg">
+                            1
+                        </div>
+                        <h4 class="text-xl font-bold text-navy-900 mb-3">Consultation & Quote</h4>
+                        <p class="text-slate-600 text-sm">We visit your site, assess the scope, and provide a transparent, detailed proposal with no hidden fees.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center relative">
+                        <div class="w-12 h-12 bg-accent text-navy-900 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-lg">
+                            2
+                        </div>
+                        <h4 class="text-xl font-bold text-navy-900 mb-3">Meticulous Prep Work</h4>
+                        <p class="text-slate-600 text-sm">The secret to a lasting finish. We protect your property, repair surfaces, sand, and prime before painting.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center relative">
+                        <div class="w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-lg">
+                            3
+                        </div>
+                        <h4 class="text-xl font-bold text-navy-900 mb-3">Flawless Execution</h4>
+                        <p class="text-slate-600 text-sm">Using premium materials, our expert crew applies the coating and performs a rigorous final walkthrough and cleanup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Social Proof -->
+    <section class="py-24 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Built on 30+ Years of Reputation.</h2>
+                    <p class="text-slate-300 text-lg">Don't just take our word for it. See why facility managers and homeowners in Gratiot County repeatedly choose us.</p>
+                </div>
+                <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
+                    <span class="text-2xl font-bold">4.9</span>
+                    <div class="flex text-accent">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <span class="text-slate-300 text-sm ml-2">Google Reviews</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 mb-6">"Mann's Painting handled our clinic's interior renovation. They were incredibly professional, worked around our patient hours, and the specialty epoxy they used in the labs looks fantastic and cleans easily. Highly recommended for any medical facility."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center font-bold">SR</div>
+                        <div>
+                            <p class="font-bold text-sm">Sarah R.</p>
+                            <p class="text-xs text-slate-400">Facility Director</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 mb-6">"We had our historic home near Alma College painted last summer. Kevin and his crew were meticulous with the prep work—scraping, caulking, and repairing wood rot before even opening a paint can. The house looks brand new."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center font-bold">JM</div>
+                        <div>
+                            <p class="font-bold text-sm">James M.</p>
+                            <p class="text-xs text-slate-400">Homeowner, Alma MI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm hidden lg:block">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 mb-6">"It's hard to find contractors who actually communicate and show up when they say they will. Mann's Painting is the exception. Straightforward pricing, excellent crew, and perfect results on our commercial warehouse project."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center font-bold">DT</div>
+                        <div>
+                            <p class="font-bold text-sm">David T.</p>
+                            <p class="text-xs text-slate-400">Property Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Lead Gen -->
+    <section class="py-24 bg-slate-50 relative" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+                <div class="grid grid-cols-1 lg:grid-cols-5">
+                    
+                    <!-- Contact Info (Left) -->
+                    <div class="bg-navy-900 text-white p-10 lg:col-span-2 relative overflow-hidden">
+                        <!-- decorative circles -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+                        <div class="absolute bottom-0 left-0 w-48 h-48 bg-accent opacity-10 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
+                        
+                        <div class="relative z-10 h-full flex flex-col">
+                            <h3 class="text-3xl font-bold mb-2">Let's Discuss Your Project.</h3>
+                            <p class="text-slate-300 mb-10">Fill out the form, and Kevin or a team member will get back to you within 24 hours to schedule an estimate.</p>
+                            
+                            <div class="space-y-6 mt-auto">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-400">Call Us Directly</p>
+                                        <a href="#" class="text-lg font-semibold hover:text-accent transition-colors">(989) 555-0198</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-400">Email Us</p>
+                                        <a href="#" class="text-lg font-semibold hover:text-accent transition-colors">quotes@mannspainting.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-400">Headquarters</p>
+                                        <p class="text-lg font-semibold">Alma, Michigan 48801</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form (Right) -->
+                    <div class="p-10 lg:col-span-3">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none" placeholder="John">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none" placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none" placeholder="(989) 555-0000">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="project-type" class="block text-sm font-medium text-slate-700 mb-1">Project Type</label>
+                                <select id="project-type" name="project-type" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none">
+                                    <option value="">Select an option...</option>
+                                    <option value="commercial">Commercial / Institutional</option>
+                                    <option value="residential-exterior">Residential Exterior</option>
+                                    <option value="residential-interior">Residential Interior</option>
+                                    <option value="specialty">Specialty / Industrial Coating</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Project Details</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-navy-900 focus:border-navy-900 transition-colors bg-slate-50 outline-none resize-none" placeholder="Tell us about your timeline, location, and specific needs..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                                Request Free Estimate
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-white/10 pt-16 pb-8 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-white text-navy-900 rounded-md flex items-center justify-center font-bold text-lg">
+                            M
+                        </div>
+                        <span class="font-bold text-xl text-white">Mann's Painting, Inc.</span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 max-w-sm">
+                        Providing premier commercial and residential painting and specialty coatings to Alma, Gratiot County, and Mid-Michigan for over 35 years.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#commercial" class="text-sm hover:text-white transition-colors">Commercial Painting</a></li>
+                        <li><a href="#services" class="text-sm hover:text-white transition-colors">Hospital & School Projects</a></li>
+                        <li><a href="#services" class="text-sm hover:text-white transition-colors">Residential Interior</a></li>
+                        <li><a href="#services" class="text-sm hover:text-white transition-colors">Industrial Coatings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Area -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Service Area</h4>
+                    <ul class="space-y-2">
+                        <li class="text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-accent"></i> Alma, MI</li>
+                        <li class="text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-accent"></i> St. Louis, MI</li>
+                        <li class="text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-accent"></i> Ithaca, MI</li>
+                        <li class="text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-accent"></i> Gratiot County</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">
+                    &copy; 2026 Mann's Painting, Inc. All rights reserved.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors">
+                        <span class="sr-only">Facebook</span>
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Mobile -->
+    <div class="fixed bottom-0 w-full z-40 md:hidden p-4 bg-white/90 backdrop-blur-md border-t border-slate-200">
+        <a href="#contact" class="block w-full bg-accent text-navy-900 font-bold py-3 rounded-lg text-center shadow-lg">
+            Request Estimate
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+
+    <script>
+      (function() {
+        const config = {
+          username: 'wuhp',
+          businessId: 'uw7tr',
+          variant: 'A',
+          origin: 'https://ais-dev-iu7tq7kd2cpslaq72zxpwz-212988073263.us-west2.run.app'
+        };
+
+        const getDevice = () => {
+          const ua = navigator.userAgent;
+          if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'tablet';
+          if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(ua)) return 'mobile';
+          return 'desktop';
+        };
+
+        const getBrowser = () => {
+          const ua = navigator.userAgent;
+          if (ua.includes('Chrome')) return 'Chrome';
+          if (ua.includes('Safari')) return 'Safari';
+          if (ua.includes('Firefox')) return 'Firefox';
+          if (ua.includes('Edge')) return 'Edge';
+          return 'Other';
+        };
+
+        const getOS = () => {
+          const ua = navigator.userAgent;
+          if (ua.includes('Windows')) return 'Windows';
+          if (ua.includes('Mac OS')) return 'macOS';
+          if (ua.includes('Android')) return 'Android';
+          if (ua.includes('iPhone') || ua.includes('iPad')) return 'iOS';
+          if (ua.includes('Linux')) return 'Linux';
+          return 'Other';
+        };
+
+        let startTime = Date.now();
+        let maxScroll = 0;
+        let locationData = null;
+
+        // Get location data
+        fetch('https://ipapi.co/json/')
+          .then(res => res.json())
+          .then(data => {
+            locationData = {
+              city: data.city,
+              region: data.region,
+              country: data.country_name
+            };
+            track('geo', { loc: JSON.stringify(locationData) });
+          })
+          .catch(() => {});
+
+        const track = (type, extra = {}) => {
+          const params = new URLSearchParams({
+            username: config.username,
+            businessId: config.businessId,
+            type: type,
+            ref: document.referrer || 'direct',
+            br: getBrowser(),
+            os: getOS(),
+            dev: getDevice(),
+            sid: sessionStorage.getItem('sf_sid') || '',
+            variant: config.variant,
+            path: window.location.pathname,
+            ...extra
+          });
+          fetch(config.origin + '/api/analytics/track?' + params.toString(), { mode: 'no-cors' });
+        };
+
+        // Session tracking
+        if (!sessionStorage.getItem('sf_sid')) {
+          const sid = Math.random().toString(36).substring(7);
+          sessionStorage.setItem('sf_sid', sid);
+          track('session');
+        }
+
+        track('view');
+
+        // Scroll tracking
+        window.addEventListener('scroll', () => {
+          const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+          if (scrollPercent > maxScroll) {
+            maxScroll = scrollPercent;
+            if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 100) {
+              track('scroll', { depth: maxScroll });
+            }
+          }
+        });
+
+        // Click tracking
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('a, button');
+          if (target) {
+            const isGoal = target.innerText.toLowerCase().includes('contact') || 
+                           target.innerText.toLowerCase().includes('book') || 
+                           target.innerText.toLowerCase().includes('get started') ||
+                           target.id.toLowerCase().includes('cta');
+            
+            track(isGoal ? 'goal' : 'click', { 
+              elementId: target.id || target.innerText.substring(0, 20).trim(),
+              text: target.innerText.substring(0, 30).trim()
+            });
+          }
+        });
+
+        // Form tracking
+        document.addEventListener('submit', (e) => {
+          track('form_submit', { elementId: e.target.id || 'form' });
+        });
+
+        // Time on page tracking
+        window.addEventListener('beforeunload', () => {
+          const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+          track('exit', { time: timeOnPage, maxScroll: maxScroll });
+        });
+
+        // Performance tracking
+        window.addEventListener('load', () => {
+          if (window.performance && window.performance.timing) {
+            const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+            track('perf', { loadTime });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
